@@ -7,16 +7,16 @@ Otherwise the program should print, “No, that doesn’t work.”
 2. Write a function that prompts the user to input values for a, b, c and n,
 converts them to integers, and uses check_fermat to check whether they
 violate Fermat’s theorem. '''
-a = int(input("Enter a value for a: "))
-b = int(input("Enter a value for b: "))
-c = int(input("Enter a value for c: "))
-n = int(input("Enter a value for n: "))
-def check_fermat_theorem():
-    while n > 2:
-        if a**n + b**n == c**n :
-            print('Holy smokes, fermat was wrong!')
-        else:
-            print("No, that doesnt work")
-        break
+def input_values():
+    a = int(input("Enter a value for a: "))
+    b = int(input("Enter a value for b: "))
+    c = int(input("Enter a value for c: "))
+    n = int(input("Enter a value for n: "))
+    check_fermat(a, b, c, n)
+def check_fermat(a, b, c, n):
+    if n > 2 and a**n + b**n == c**n :
+        print('Holy smokes, fermat was wrong!')
+    else:
+        print("No, that doesn't work")
 
-check_fermat_theorem()
+input_values()
